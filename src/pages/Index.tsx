@@ -117,7 +117,7 @@ export default function Index() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6 mb-12">
-            <Card className="bg-gradient-to-br from-orange-500/20 to-purple-600/20 border-orange-500/30 backdrop-blur hover:scale-105 transition-transform">
+            <Card className="bg-black/60 border-orange-500 backdrop-blur-xl hover:scale-105 transition-transform shadow-2xl shadow-orange-500/20">
               <div className="relative h-48 overflow-hidden rounded-t-lg">
                 <img 
                   src="https://cdn.poehali.dev/projects/824c928d-4636-46be-89a0-6fedf0929559/files/cccf383f-2931-48e3-b1c3-1e54bd40da00.jpg"
@@ -134,27 +134,27 @@ export default function Index() {
                 <div className="flex items-center gap-3 mb-2">
                   <Icon name="Ghost" size={32} className="text-orange-400" />
                   <div>
-                    <CardTitle className="text-2xl text-orange-100">Хеллоуин в глемпинге</CardTitle>
-                    <p className="text-orange-300/70 text-sm">31 октября, 18:00 - 23:00</p>
+                    <CardTitle className="text-2xl text-white font-bold">Хеллоуин в глемпинге</CardTitle>
+                    <p className="text-orange-300 text-sm font-medium">31 октября, 18:00 - 23:00</p>
                   </div>
                 </div>
               </CardHeader>
               <CardContent className="space-y-4">
-                <CardDescription className="text-orange-100/80 text-base">
+                <CardDescription className="text-gray-100 text-base leading-relaxed">
                   Незабываемая ночь с тыквенными фонарями, страшными историями у костра, 
                   угощениями и сюрпризами. Территория украшена в хеллоуинском стиле.
                 </CardDescription>
                 <div className="space-y-2">
-                  <div className="flex items-center gap-2 text-orange-200">
-                    <Icon name="Check" size={18} />
+                  <div className="flex items-center gap-2 text-white">
+                    <Icon name="Check" size={18} className="text-orange-400" />
                     <span>Тематическое оформление территории</span>
                   </div>
-                  <div className="flex items-center gap-2 text-orange-200">
-                    <Icon name="Check" size={18} />
+                  <div className="flex items-center gap-2 text-white">
+                    <Icon name="Check" size={18} className="text-orange-400" />
                     <span>Костёр и страшные истории</span>
                   </div>
-                  <div className="flex items-center gap-2 text-orange-200">
-                    <Icon name="Check" size={18} />
+                  <div className="flex items-center gap-2 text-white">
+                    <Icon name="Check" size={18} className="text-orange-400" />
                     <span>Угощения и глинтвейн</span>
                   </div>
                 </div>
@@ -168,7 +168,7 @@ export default function Index() {
               </CardContent>
             </Card>
 
-            <Card className="bg-gradient-to-br from-purple-500/20 to-pink-600/20 border-purple-500/30 backdrop-blur hover:scale-105 transition-transform">
+            <Card className="bg-black/60 border-purple-500 backdrop-blur-xl hover:scale-105 transition-transform shadow-2xl shadow-purple-500/20">
               <div className="relative h-48 overflow-hidden rounded-t-lg">
                 <img 
                   src="https://cdn.poehali.dev/projects/824c928d-4636-46be-89a0-6fedf0929559/files/83c66046-3997-48de-a764-7ae5fa1467f0.jpg"
@@ -185,27 +185,27 @@ export default function Index() {
                 <div className="flex items-center gap-3 mb-2">
                   <Icon name="Moon" size={32} className="text-purple-400" />
                   <div>
-                    <CardTitle className="text-2xl text-purple-100">Мистический квест</CardTitle>
-                    <p className="text-purple-300/70 text-sm">31 октября, 20:00 - 22:00</p>
+                    <CardTitle className="text-2xl text-white font-bold">Мистический квест</CardTitle>
+                    <p className="text-purple-300 text-sm font-medium">31 октября, 20:00 - 22:00</p>
                   </div>
                 </div>
               </CardHeader>
               <CardContent className="space-y-4">
-                <CardDescription className="text-purple-100/80 text-base">
+                <CardDescription className="text-gray-100 text-base leading-relaxed">
                   Увлекательное путешествие по ночному лесу с загадками и тайнами. 
                   Найдите все артефакты и раскройте секрет лесной легенды.
                 </CardDescription>
                 <div className="space-y-2">
-                  <div className="flex items-center gap-2 text-purple-200">
-                    <Icon name="Check" size={18} />
+                  <div className="flex items-center gap-2 text-white">
+                    <Icon name="Check" size={18} className="text-purple-400" />
                     <span>Прогулка по ночному лесу</span>
                   </div>
-                  <div className="flex items-center gap-2 text-purple-200">
-                    <Icon name="Check" size={18} />
+                  <div className="flex items-center gap-2 text-white">
+                    <Icon name="Check" size={18} className="text-purple-400" />
                     <span>Загадки и головоломки</span>
                   </div>
-                  <div className="flex items-center gap-2 text-purple-200">
-                    <Icon name="Check" size={18} />
+                  <div className="flex items-center gap-2 text-white">
+                    <Icon name="Check" size={18} className="text-purple-400" />
                     <span>Призы победителям</span>
                   </div>
                 </div>
@@ -220,7 +220,7 @@ export default function Index() {
             </Card>
           </div>
 
-          <Card className="bg-gradient-to-r from-orange-600/30 via-red-600/30 to-purple-600/30 border-orange-500/50 backdrop-blur-lg">
+          <Card className="bg-black/60 border-orange-500 backdrop-blur-xl shadow-2xl shadow-orange-500/20">
             <div className="grid md:grid-cols-2 gap-6 p-6">
               <div className="relative h-64 md:h-full overflow-hidden rounded-lg">
                 <img 
@@ -232,20 +232,20 @@ export default function Index() {
               <div className="flex flex-col justify-center space-y-4">
                 <div className="flex items-center gap-3">
                   <Icon name="Flame" size={40} className="text-orange-400" />
-                  <h3 className="text-3xl font-bold text-orange-100">Ночь у костра</h3>
+                  <h3 className="text-3xl font-bold text-white">Ночь у костра</h3>
                 </div>
-                <p className="text-orange-100/80 text-lg">
+                <p className="text-gray-100 text-lg">
                   После квеста всех ждёт уютный костёр с горячим глинтвейном, 
                   жареным зефиром и атмосферными историями до самого утра.
                 </p>
                 <div className="grid grid-cols-2 gap-4 pt-4">
-                  <div className="text-center p-4 bg-orange-500/20 rounded-lg">
-                    <Icon name="Users" size={32} className="mx-auto mb-2 text-orange-300" />
-                    <p className="text-orange-100 font-semibold">До 20 человек</p>
+                  <div className="text-center p-4 bg-orange-600/30 rounded-lg border border-orange-500/30">
+                    <Icon name="Users" size={32} className="mx-auto mb-2 text-orange-400" />
+                    <p className="text-white font-semibold">До 20 человек</p>
                   </div>
-                  <div className="text-center p-4 bg-orange-500/20 rounded-lg">
-                    <Icon name="Clock" size={32} className="mx-auto mb-2 text-orange-300" />
-                    <p className="text-orange-100 font-semibold">5 часов</p>
+                  <div className="text-center p-4 bg-orange-600/30 rounded-lg border border-orange-500/30">
+                    <Icon name="Clock" size={32} className="mx-auto mb-2 text-orange-400" />
+                    <p className="text-white font-semibold">5 часов</p>
                   </div>
                 </div>
                 <Button size="lg" className="bg-orange-600 hover:bg-orange-700 w-full">
