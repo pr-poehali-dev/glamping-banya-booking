@@ -5,6 +5,13 @@ import { Calendar } from '@/components/ui/calendar';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import Icon from '@/components/ui/icon';
 import { Badge } from '@/components/ui/badge';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 export default function Index() {
   const [date, setDate] = useState<Date | undefined>(new Date());
@@ -56,6 +63,41 @@ export default function Index() {
     }
   ];
 
+  const events = [
+    {
+      date: '31 октября',
+      title: 'Хеллоуин в лесу',
+      description: 'Мистическая ночь с костром, страшными историями и угощениями. Тематическое оформление территории.',
+      price: '5000 ₽',
+      icon: 'Ghost',
+      badge: 'Скоро'
+    },
+    {
+      date: '4-5 ноября',
+      title: 'Выходные у костра',
+      description: 'Уютные осенние выходные с барбекю, глинтвейном и живой музыкой под звёздным небом.',
+      price: '4500 ₽',
+      icon: 'Flame',
+      badge: null
+    },
+    {
+      date: '15 ноября',
+      title: 'Йога на рассвете',
+      description: 'Утренняя практика на свежем воздухе, завтрак и банные процедуры. Идеально для перезагрузки.',
+      price: '3500 ₽',
+      icon: 'Sunrise',
+      badge: null
+    },
+    {
+      date: '30 ноября',
+      title: 'Предзимний пикник',
+      description: 'Последний осенний пикник с горячим чаем, пледами и фотосессией в уютной атмосфере.',
+      price: '3000 ₽',
+      icon: 'Coffee',
+      badge: null
+    }
+  ];
+
   return (
     <div className="min-h-screen">
       <header className="bg-primary text-primary-foreground py-4 px-6 sticky top-0 z-50 shadow-md">
@@ -65,6 +107,7 @@ export default function Index() {
             ЛесБаня
           </h1>
           <div className="flex gap-6">
+            <a href="#events" className="hover:text-accent transition-colors">Мероприятия</a>
             <a href="#sauna" className="hover:text-accent transition-colors">Баня</a>
             <a href="#booking" className="hover:text-accent transition-colors">Бронирование</a>
             <a href="#services" className="hover:text-accent transition-colors">Услуги</a>
@@ -89,6 +132,85 @@ export default function Index() {
             <Icon name="Calendar" size={20} className="mr-2" />
             Забронировать
           </Button>
+        </div>
+      </section>
+
+      <section className="relative h-[300px] flex items-center justify-center overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: `url('https://cdn.poehali.dev/projects/824c928d-4636-46be-89a0-6fedf0929559/files/dfd59b9a-17e0-41dd-8567-8f23380fc953.jpg')`,
+          }}
+        >
+          <div className="absolute inset-0 bg-black/50" />
+        </div>
+        <div className="relative z-10 text-center text-white px-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3">Специальные мероприятия</h2>
+          <p className="text-lg md:text-xl mb-6 text-gray-100">Присоединяйтесь к нашим тематическим событиям</p>
+          <Button 
+            size="lg" 
+            className="bg-orange-600 hover:bg-orange-700 text-white"
+            onClick={() => document.getElementById('events')?.scrollIntoView({ behavior: 'smooth' })}
+          >
+            <Icon name="Sparkles" size={20} className="mr-2" />
+            Смотреть афишу
+          </Button>
+        </div>
+      </section>
+
+      <section id="events" className="py-20 px-6">
+        <div className="container mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-12 text-primary">Афиша мероприятий</h2>
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full max-w-6xl mx-auto"
+          >
+            <CarouselContent>
+              {events.map((event, index) => (
+                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                  <Card className="h-full hover:shadow-xl transition-shadow">
+                    <CardHeader>
+                      <div className="flex items-center justify-between mb-2">
+                        <Badge variant="secondary" className="text-sm">
+                          {event.date}
+                        </Badge>
+                        {event.badge && (
+                          <Badge className="bg-orange-600 text-white">
+                            {event.badge}
+                          </Badge>
+                        )}
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <div className="p-3 bg-accent/10 rounded-lg">
+                          <Icon name={event.icon} size={28} className="text-accent" />
+                        </div>
+                        <div>
+                          <CardTitle className="text-xl mb-2">{event.title}</CardTitle>
+                          <CardDescription className="text-sm">
+                            {event.description}
+                          </CardDescription>
+                        </div>
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="flex items-center justify-between">
+                        <span className="text-2xl font-bold text-accent">{event.price}</span>
+                        <Button>
+                          <Icon name="Ticket" size={18} className="mr-2" />
+                          Забронировать
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
         </div>
       </section>
 
