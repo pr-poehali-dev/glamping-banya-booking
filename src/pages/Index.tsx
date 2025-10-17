@@ -5,13 +5,6 @@ import { Calendar } from '@/components/ui/calendar';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import Icon from '@/components/ui/icon';
 import { Badge } from '@/components/ui/badge';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 
 export default function Index() {
   const [date, setDate] = useState<Date | undefined>(new Date());
@@ -63,40 +56,7 @@ export default function Index() {
     }
   ];
 
-  const events = [
-    {
-      date: '31 октября',
-      title: 'Хеллоуин в лесу',
-      description: 'Мистическая ночь с костром, страшными историями и угощениями. Тематическое оформление территории.',
-      price: '5000 ₽',
-      icon: 'Ghost',
-      badge: 'Скоро'
-    },
-    {
-      date: '4-5 ноября',
-      title: 'Выходные у костра',
-      description: 'Уютные осенние выходные с барбекю, глинтвейном и живой музыкой под звёздным небом.',
-      price: '4500 ₽',
-      icon: 'Flame',
-      badge: null
-    },
-    {
-      date: '15 ноября',
-      title: 'Йога на рассвете',
-      description: 'Утренняя практика на свежем воздухе, завтрак и банные процедуры. Идеально для перезагрузки.',
-      price: '3500 ₽',
-      icon: 'Sunrise',
-      badge: null
-    },
-    {
-      date: '30 ноября',
-      title: 'Предзимний пикник',
-      description: 'Последний осенний пикник с горячим чаем, пледами и фотосессией в уютной атмосфере.',
-      price: '3000 ₽',
-      icon: 'Coffee',
-      badge: null
-    }
-  ];
+
 
   return (
     <div className="min-h-screen">
@@ -135,82 +95,172 @@ export default function Index() {
         </div>
       </section>
 
-      <section className="relative h-[300px] flex items-center justify-center overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url('https://cdn.poehali.dev/projects/824c928d-4636-46be-89a0-6fedf0929559/files/dfd59b9a-17e0-41dd-8567-8f23380fc953.jpg')`,
-          }}
-        >
-          <div className="absolute inset-0 bg-black/50" />
+      <section id="events" className="relative py-20 px-6 overflow-hidden bg-gradient-to-b from-orange-950 via-purple-950 to-black">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-10 text-6xl">🎃</div>
+          <div className="absolute top-40 right-20 text-5xl">👻</div>
+          <div className="absolute bottom-20 left-1/4 text-5xl">🦇</div>
+          <div className="absolute bottom-40 right-1/3 text-6xl">🍂</div>
         </div>
-        <div className="relative z-10 text-center text-white px-4">
-          <h2 className="text-3xl md:text-4xl font-bold mb-3">Специальные мероприятия</h2>
-          <p className="text-lg md:text-xl mb-6 text-gray-100">Присоединяйтесь к нашим тематическим событиям</p>
-          <Button 
-            size="lg" 
-            className="bg-orange-600 hover:bg-orange-700 text-white"
-            onClick={() => document.getElementById('events')?.scrollIntoView({ behavior: 'smooth' })}
-          >
-            <Icon name="Sparkles" size={20} className="mr-2" />
-            Смотреть афишу
-          </Button>
-        </div>
-      </section>
 
-      <section id="events" className="py-20 px-6">
-        <div className="container mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12 text-primary">Афиша мероприятий</h2>
-          <Carousel
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            className="w-full max-w-6xl mx-auto"
-          >
-            <CarouselContent>
-              {events.map((event, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                  <Card className="h-full hover:shadow-xl transition-shadow">
-                    <CardHeader>
-                      <div className="flex items-center justify-between mb-2">
-                        <Badge variant="secondary" className="text-sm">
-                          {event.date}
-                        </Badge>
-                        {event.badge && (
-                          <Badge className="bg-orange-600 text-white">
-                            {event.badge}
-                          </Badge>
-                        )}
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <div className="p-3 bg-accent/10 rounded-lg">
-                          <Icon name={event.icon} size={28} className="text-accent" />
-                        </div>
-                        <div>
-                          <CardTitle className="text-xl mb-2">{event.title}</CardTitle>
-                          <CardDescription className="text-sm">
-                            {event.description}
-                          </CardDescription>
-                        </div>
-                      </div>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="flex items-center justify-between">
-                        <span className="text-2xl font-bold text-accent">{event.price}</span>
-                        <Button>
-                          <Icon name="Ticket" size={18} className="mr-2" />
-                          Забронировать
-                        </Button>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
+        <div className="container mx-auto relative z-10">
+          <div className="text-center mb-16">
+            <Badge className="mb-4 bg-orange-600 text-white px-6 py-2 text-lg">
+              🎃 Хеллоуин 2025
+            </Badge>
+            <h2 className="text-5xl md:text-6xl font-bold mb-4 text-orange-400">
+              Мистическая ночь в лесу
+            </h2>
+            <p className="text-xl text-orange-100 max-w-2xl mx-auto">
+              Встречайте самую страшную и уютную ночь в году вместе с нами
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6 mb-12">
+            <Card className="bg-gradient-to-br from-orange-500/20 to-purple-600/20 border-orange-500/30 backdrop-blur hover:scale-105 transition-transform">
+              <div className="relative h-48 overflow-hidden rounded-t-lg">
+                <img 
+                  src="https://cdn.poehali.dev/projects/824c928d-4636-46be-89a0-6fedf0929559/files/cccf383f-2931-48e3-b1c3-1e54bd40da00.jpg"
+                  alt="Halloween"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute top-4 right-4">
+                  <Badge className="bg-red-600 text-white animate-pulse">
+                    🔥 Горячее
+                  </Badge>
+                </div>
+              </div>
+              <CardHeader>
+                <div className="flex items-center gap-3 mb-2">
+                  <Icon name="Ghost" size={32} className="text-orange-400" />
+                  <div>
+                    <CardTitle className="text-2xl text-orange-100">Хеллоуин в глемпинге</CardTitle>
+                    <p className="text-orange-300/70 text-sm">31 октября, 18:00 - 23:00</p>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <CardDescription className="text-orange-100/80 text-base">
+                  Незабываемая ночь с тыквенными фонарями, страшными историями у костра, 
+                  угощениями и сюрпризами. Территория украшена в хеллоуинском стиле.
+                </CardDescription>
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2 text-orange-200">
+                    <Icon name="Check" size={18} />
+                    <span>Тематическое оформление территории</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-orange-200">
+                    <Icon name="Check" size={18} />
+                    <span>Костёр и страшные истории</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-orange-200">
+                    <Icon name="Check" size={18} />
+                    <span>Угощения и глинтвейн</span>
+                  </div>
+                </div>
+                <div className="flex items-center justify-between pt-4">
+                  <span className="text-3xl font-bold text-orange-400">5000 ₽</span>
+                  <Button size="lg" className="bg-orange-600 hover:bg-orange-700">
+                    <Icon name="Ticket" size={20} className="mr-2" />
+                    Забронировать
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-gradient-to-br from-purple-500/20 to-pink-600/20 border-purple-500/30 backdrop-blur hover:scale-105 transition-transform">
+              <div className="relative h-48 overflow-hidden rounded-t-lg">
+                <img 
+                  src="https://cdn.poehali.dev/projects/824c928d-4636-46be-89a0-6fedf0929559/files/83c66046-3997-48de-a764-7ae5fa1467f0.jpg"
+                  alt="Mystery Walk"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute top-4 right-4">
+                  <Badge className="bg-purple-600 text-white">
+                    ✨ Новинка
+                  </Badge>
+                </div>
+              </div>
+              <CardHeader>
+                <div className="flex items-center gap-3 mb-2">
+                  <Icon name="Moon" size={32} className="text-purple-400" />
+                  <div>
+                    <CardTitle className="text-2xl text-purple-100">Мистический квест</CardTitle>
+                    <p className="text-purple-300/70 text-sm">31 октября, 20:00 - 22:00</p>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <CardDescription className="text-purple-100/80 text-base">
+                  Увлекательное путешествие по ночному лесу с загадками и тайнами. 
+                  Найдите все артефакты и раскройте секрет лесной легенды.
+                </CardDescription>
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2 text-purple-200">
+                    <Icon name="Check" size={18} />
+                    <span>Прогулка по ночному лесу</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-purple-200">
+                    <Icon name="Check" size={18} />
+                    <span>Загадки и головоломки</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-purple-200">
+                    <Icon name="Check" size={18} />
+                    <span>Призы победителям</span>
+                  </div>
+                </div>
+                <div className="flex items-center justify-between pt-4">
+                  <span className="text-3xl font-bold text-purple-400">3500 ₽</span>
+                  <Button size="lg" className="bg-purple-600 hover:bg-purple-700">
+                    <Icon name="Ticket" size={20} className="mr-2" />
+                    Забронировать
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <Card className="bg-gradient-to-r from-orange-600/30 via-red-600/30 to-purple-600/30 border-orange-500/50 backdrop-blur-lg">
+            <div className="grid md:grid-cols-2 gap-6 p-6">
+              <div className="relative h-64 md:h-full overflow-hidden rounded-lg">
+                <img 
+                  src="https://cdn.poehali.dev/projects/824c928d-4636-46be-89a0-6fedf0929559/files/709f7816-12a9-41b4-9755-bf51945281a8.jpg"
+                  alt="Bonfire"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="flex flex-col justify-center space-y-4">
+                <div className="flex items-center gap-3">
+                  <Icon name="Flame" size={40} className="text-orange-400" />
+                  <h3 className="text-3xl font-bold text-orange-100">Ночь у костра</h3>
+                </div>
+                <p className="text-orange-100/80 text-lg">
+                  После квеста всех ждёт уютный костёр с горячим глинтвейном, 
+                  жареным зефиром и атмосферными историями до самого утра.
+                </p>
+                <div className="grid grid-cols-2 gap-4 pt-4">
+                  <div className="text-center p-4 bg-orange-500/20 rounded-lg">
+                    <Icon name="Users" size={32} className="mx-auto mb-2 text-orange-300" />
+                    <p className="text-orange-100 font-semibold">До 20 человек</p>
+                  </div>
+                  <div className="text-center p-4 bg-orange-500/20 rounded-lg">
+                    <Icon name="Clock" size={32} className="mx-auto mb-2 text-orange-300" />
+                    <p className="text-orange-100 font-semibold">5 часов</p>
+                  </div>
+                </div>
+                <Button size="lg" className="bg-orange-600 hover:bg-orange-700 w-full">
+                  <Icon name="Sparkles" size={20} className="mr-2" />
+                  Забронировать всё вместе за 7500 ₽
+                </Button>
+              </div>
+            </div>
+          </Card>
+
+          <div className="mt-12 text-center">
+            <p className="text-orange-200/60 text-sm mb-4">
+              🎃 Количество мест ограничено • Бронируйте заранее
+            </p>
+          </div>
         </div>
       </section>
 
