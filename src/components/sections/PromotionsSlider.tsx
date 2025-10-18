@@ -267,10 +267,13 @@ export default function PromotionsSlider() {
         </div>
 
         <div className="text-center mt-16">
-          <p className="text-white/60 text-lg mb-6 font-light">
+          <p className="text-white/90 text-lg mb-6 font-light">
             Не нашли подходящий вариант? Мы создадим индивидуальную программу для вас
           </p>
-          <Button size="lg" variant="outline" className="border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm text-lg px-8 py-6">
+          <Button 
+            size="lg" 
+            className="bg-[#B99D75] hover:bg-[#A38B69] text-white border-0 text-lg px-10 h-14 shadow-xl hover:shadow-2xl transition-all font-semibold"
+          >
             <Icon name="MessageCircle" size={22} className="mr-3" />
             Обсудить с менеджером
           </Button>

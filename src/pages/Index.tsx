@@ -3,6 +3,7 @@ import HeroSection from '@/components/sections/HeroSection';
 import HalloweenSection from '@/components/sections/HalloweenSection';
 import RegularEventsSection from '@/components/sections/RegularEventsSection';
 import PromotionsSlider from '@/components/sections/PromotionsSlider';
+import GlampingHousesSection from '@/components/sections/GlampingHousesSection';
 import SaunaSection from '@/components/sections/SaunaSection';
 import BookingSection from '@/components/sections/BookingSection';
 import ServicesSection from '@/components/sections/ServicesSection';
@@ -17,6 +18,7 @@ export default function Index() {
       <HalloweenSection />
       <RegularEventsSection />
       <PromotionsSlider />
+      <GlampingHousesSection />
       <SaunaSection />
       <BookingSection />
       <ServicesSection />
