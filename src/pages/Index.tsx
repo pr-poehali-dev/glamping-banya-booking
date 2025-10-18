@@ -282,7 +282,7 @@ export default function Index() {
             <Card className="bg-white/80 border-[#53624E] backdrop-blur-sm hover:scale-105 transition-transform shadow-xl shadow-[#53624E]/10">
               <div className="relative h-48 overflow-hidden rounded-t-lg">
                 <img 
-                  src="https://cdn.poehali.dev/projects/824c928d-4636-46be-89a0-6fedf0929559/files/21113461-bdae-480d-958b-b1272ac247f4.jpg"
+                  src="https://cdn.poehali.dev/projects/824c928d-4636-46be-89a0-6fedf0929559/files/0cf3c686-c0c2-4a7e-8343-09ba2cf3c81d.jpg"
                   alt="Зимний отдых"
                   className="w-full h-full object-cover"
                 />
