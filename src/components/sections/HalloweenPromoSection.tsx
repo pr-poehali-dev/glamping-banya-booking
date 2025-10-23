@@ -13,6 +13,14 @@ export default function HalloweenPromoSection() {
       buttonText: "Взять хэллоуин-скидку",
       bgColor: "from-[#1a3d3d] to-[#0f2626]",
       accentColor: "bg-orange-500 hover:bg-orange-600"
+    },
+    {
+      badge: "SCARY NIGHTS",
+      title: "ХЭЛЛОУИН В ЛЕСУ",
+      subtitle: "Костры, тыквы и мистические истории — встречай самую страшную ночь года с нами",
+      buttonText: "Забронировать ночь",
+      bgColor: "from-[#7c2d12] via-[#431407] to-[#1c0a00]",
+      accentColor: "bg-purple-600 hover:bg-purple-700"
     }
   ];
 
