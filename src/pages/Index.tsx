@@ -1,5 +1,6 @@
 import Header from '@/components/sections/Header';
 import HeroSection from '@/components/sections/HeroSection';
+import HalloweenPromoSection from '@/components/sections/HalloweenPromoSection';
 import HalloweenSection from '@/components/sections/HalloweenSection';
 import RegularEventsSection from '@/components/sections/RegularEventsSection';
 import PromotionsSlider from '@/components/sections/PromotionsSlider';
@@ -16,6 +17,7 @@ export default function Index() {
     <div className="min-h-screen">
       <Header />
       <HeroSection />
+      <HalloweenPromoSection />
       <HalloweenSection />
       <RegularEventsSection />
       <PromotionsSlider />
