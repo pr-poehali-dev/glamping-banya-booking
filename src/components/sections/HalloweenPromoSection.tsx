@@ -42,14 +42,14 @@ export default function HalloweenPromoSection() {
       </div>
 
       <div className="container mx-auto relative z-10">
-        <div className="text-center mb-12">
-          <Badge className="mb-4 bg-orange-600 text-white px-6 py-2 text-lg animate-pulse">
+        <div className="text-center mb-16">
+          <Badge className="mb-6 bg-orange-600 text-white px-6 py-2 text-lg animate-pulse">
             🎃 Специальное предложение
           </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-orange-400">
+          <h2 className="text-5xl md:text-6xl font-extrabold mb-6 text-white tracking-tight">
             Октябрьские скидки
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto font-light leading-relaxed">
             Встречай Хэллоуин с выгодой — только до конца месяца
           </p>
         </div>
