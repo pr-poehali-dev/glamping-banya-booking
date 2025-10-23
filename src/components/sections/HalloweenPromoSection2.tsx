@@ -32,8 +32,8 @@ export default function HalloweenPromoSection2() {
   };
 
   return (
-    <section className="relative py-20 px-6 bg-gradient-to-b from-orange-50 via-white to-orange-50 overflow-hidden">
-      <div className="absolute inset-0 opacity-20">
+    <section className="relative py-20 px-6 bg-gradient-to-b from-amber-50/30 via-orange-50/20 to-amber-50/30 overflow-hidden">
+      <div className="absolute inset-0 opacity-15">
         <div className="absolute top-20 left-10 text-8xl">🎃</div>
         <div className="absolute top-40 right-20 text-7xl">🍂</div>
         <div className="absolute bottom-40 left-1/4 text-6xl">🦇</div>
@@ -46,10 +46,10 @@ export default function HalloweenPromoSection2() {
           <Badge className="mb-4 bg-orange-600 text-white px-6 py-2 text-lg animate-pulse">
             🎃 Осеннее предложение
           </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-orange-600">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-orange-700">
             Октябрьские скидки
           </h2>
-          <p className="text-xl text-gray-700 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Встречай Хэллоуин с выгодой — только до конца месяца
           </p>
         </div>
