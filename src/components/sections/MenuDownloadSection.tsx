@@ -34,41 +34,8 @@ export default function MenuDownloadSection() {
           </Button>
         </div>
 
-        {/* Категории меню */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <Card className="p-6 text-center hover:shadow-lg transition-shadow cursor-pointer">
-            <div className="w-16 h-16 mx-auto mb-4 bg-accent/10 rounded-full flex items-center justify-center">
-              <Icon name="Utensils" size={32} className="text-accent" />
-            </div>
-            <h3 className="text-xl font-bold mb-2">Закуски</h3>
-            <p className="text-muted-foreground">
-              Сырдаги, пашмелай и другие фирменные закуски от шефа
-            </p>
-          </Card>
-
-          <Card className="p-6 text-center hover:shadow-lg transition-shadow cursor-pointer">
-            <div className="w-16 h-16 mx-auto mb-4 bg-accent/10 rounded-full flex items-center justify-center">
-              <Icon name="ChefHat" size={32} className="text-accent" />
-            </div>
-            <h3 className="text-xl font-bold mb-2">Основные блюда</h3>
-            <p className="text-muted-foreground">
-              Грили, стейки и авторские бургеры в брутальном стиле
-            </p>
-          </Card>
-
-          <Card className="p-6 text-center hover:shadow-lg transition-shadow cursor-pointer">
-            <div className="w-16 h-16 mx-auto mb-4 bg-accent/10 rounded-full flex items-center justify-center">
-              <Icon name="Coffee" size={32} className="text-accent" />
-            </div>
-            <h3 className="text-xl font-bold mb-2">Десерты</h3>
-            <p className="text-muted-foreground">
-              Изысканные сладости для завершения трапезы
-            </p>
-          </Card>
-        </div>
-
         {/* Highlight блюда с фото */}
-        <div className="mt-16">
+        <div>
           <h3 className="text-3xl font-bold text-center mb-8">Хиты нашего меню</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="group cursor-pointer">
