@@ -1,0 +1,148 @@
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { useState, useEffect } from 'react';
+
+export default function NewYearPromoSection() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
+  const slides = [
+    {
+      badge: "НОВОГОДНИЕ ПРАЗДНИКИ",
+      title: "Встречай Новый Год в глемпинге",
+      subtitle: "Уютная зима у камина, снежный лес и новогоднее настроение — забронируй свой зимний отдых",
+      buttonText: "Забронировать",
+      bgColor: "from-slate-700 to-slate-800"
+    },
+    {
+      badge: "ЗИМНИЙ ОТДЫХ",
+      title: "Спецпредложение на январь",
+      subtitle: "Продли новогоднее настроение — скидки на январские заезды для тех, кто любит тишину зимнего леса",
+      buttonText: "Узнать подробнее",
+      bgColor: "from-blue-800 to-slate-800"
+    }
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, [slides.length]);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
+  return (
+    <section className="relative py-20 px-6 bg-gradient-to-b from-blue-50/40 via-slate-50/30 to-blue-50/40 overflow-hidden">
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-20 left-10 text-6xl">❄️</div>
+        <div className="absolute top-40 right-20 text-5xl">🎄</div>
+        <div className="absolute bottom-40 left-1/4 text-6xl">⛄</div>
+        <div className="absolute top-60 right-1/3 text-5xl">❄️</div>
+        <div className="absolute bottom-20 right-10 text-6xl">✨</div>
+      </div>
+
+      <div className="container mx-auto relative z-10">
+        <div className="text-center mb-12">
+          <Badge className="mb-4 bg-blue-600 text-white px-6 py-2 text-lg">
+            ❄️ Зимнее предложение
+          </Badge>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-slate-700">
+            Новогодние каникулы в глемпинге
+          </h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Встречай зиму в уютной атмосфере среди заснеженного леса
+          </p>
+        </div>
+        
+        <div className="relative overflow-hidden rounded-3xl">
+          {slides.map((slide, index) => (
+            <div
+              key={index}
+              className={`transition-all duration-700 ${
+                index === currentSlide ? 'opacity-100' : 'opacity-0 absolute inset-0'
+              }`}
+            >
+              <div className={`relative bg-gradient-to-r ${slide.bgColor} rounded-3xl overflow-hidden min-h-[500px] flex items-center justify-center`}>
+                <div className="absolute inset-0 pointer-events-none">
+                  {[...Array(30)].map((_, i) => (
+                    <div
+                      key={i}
+                      className="absolute w-2 h-2 bg-white rounded-full opacity-60 animate-pulse"
+                      style={{
+                        top: `${Math.random() * 100}%`,
+                        left: `${Math.random() * 100}%`,
+                        animationDelay: `${Math.random() * 3}s`,
+                        animationDuration: `${2 + Math.random() * 2}s`
+                      }}
+                    />
+                  ))}
+                </div>
+
+                <div className="relative z-10 text-center px-8 py-16">
+                  <div className="inline-block mb-6 px-6 py-2 border-2 border-white/40 rounded-full">
+                    <span className="text-white font-medium tracking-wider text-sm">
+                      {slide.badge}
+                    </span>
+                  </div>
+                  
+                  <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+                    {slide.title}
+                  </h2>
+                  
+                  <p className="text-white/90 text-lg md:text-xl max-w-3xl mx-auto mb-10 leading-relaxed">
+                    {slide.subtitle}
+                  </p>
+                  
+                  <Button 
+                    size="lg" 
+                    className="bg-blue-500 hover:bg-blue-600 text-white text-lg px-10 py-6 rounded-full font-semibold shadow-2xl hover:scale-105 transition-transform"
+                  >
+                    {slide.buttonText}
+                  </Button>
+                </div>
+
+                <button
+                  onClick={prevSlide}
+                  className="absolute left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/40 hover:bg-black/60 flex items-center justify-center text-white transition-colors backdrop-blur-sm z-20"
+                  aria-label="Previous slide"
+                >
+                  ‹
+                </button>
+                <button
+                  onClick={nextSlide}
+                  className="absolute right-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/40 hover:bg-black/60 flex items-center justify-center text-white transition-colors backdrop-blur-sm z-20"
+                  aria-label="Next slide"
+                >
+                  ›
+                </button>
+              </div>
+            </div>
+          ))}
+
+          {slides.length > 1 && (
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+              {slides.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`w-2 h-2 rounded-full transition-all ${
+                    index === currentSlide
+                      ? 'bg-white w-8'
+                      : 'bg-white/40 hover:bg-white/60'
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+  );
+}
