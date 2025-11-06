@@ -1,5 +1,6 @@
 import Header from '@/components/sections/Header';
 import HeroSection from '@/components/sections/HeroSection';
+import ChristmasPromoSection from '@/components/sections/ChristmasPromoSection';
 import FestivePromoSection from '@/components/sections/FestivePromoSection';
 import NewYearPromoSection from '@/components/sections/NewYearPromoSection';
 import WinterPromoSection from '@/components/sections/WinterPromoSection';
@@ -20,6 +21,7 @@ export default function Index() {
     <div className="min-h-screen">
       <Header />
       <HeroSection />
+      <ChristmasPromoSection />
       <FestivePromoSection />
       <NewYearPromoSection />
       <WinterPromoSection />
