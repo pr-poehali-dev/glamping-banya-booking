@@ -11,14 +11,14 @@ export default function NewYearPromoSection() {
       title: "Встречай Новый Год в глемпинге",
       subtitle: "Уютная зима у камина, снежный лес и новогоднее настроение — забронируй свой зимний отдых",
       buttonText: "Забронировать",
-      bgColor: "from-slate-700 to-slate-800"
+      bgColor: "from-emerald-700 via-red-700 to-emerald-800"
     },
     {
       badge: "ЗИМНИЙ ОТДЫХ",
       title: "Спецпредложение на январь",
       subtitle: "Продли новогоднее настроение — скидки на январские заезды для тех, кто любит тишину зимнего леса",
       buttonText: "Узнать подробнее",
-      bgColor: "from-blue-800 to-slate-800"
+      bgColor: "from-blue-700 via-indigo-700 to-purple-800"
     }
   ];
 
@@ -38,24 +38,26 @@ export default function NewYearPromoSection() {
   };
 
   return (
-    <section className="relative py-20 px-6 bg-gradient-to-b from-blue-50/40 via-slate-50/30 to-blue-50/40 overflow-hidden">
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-10 text-6xl">❄️</div>
-        <div className="absolute top-40 right-20 text-5xl">🎄</div>
-        <div className="absolute bottom-40 left-1/4 text-6xl">⛄</div>
-        <div className="absolute top-60 right-1/3 text-5xl">❄️</div>
-        <div className="absolute bottom-20 right-10 text-6xl">✨</div>
+    <section className="relative py-20 px-6 bg-gradient-to-br from-red-900/20 via-green-900/20 to-red-900/20 overflow-hidden">
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-20 left-10 text-7xl animate-pulse">🎄</div>
+        <div className="absolute top-40 right-20 text-6xl animate-bounce" style={{animationDuration: '3s'}}>🎁</div>
+        <div className="absolute bottom-40 left-1/4 text-7xl">⭐</div>
+        <div className="absolute top-60 right-1/3 text-6xl animate-pulse" style={{animationDelay: '1s'}}>🎄</div>
+        <div className="absolute bottom-20 right-10 text-7xl animate-pulse" style={{animationDelay: '2s'}}>✨</div>
+        <div className="absolute top-32 left-1/3 text-5xl">🎅</div>
+        <div className="absolute bottom-60 right-1/4 text-6xl">🔔</div>
       </div>
 
       <div className="container mx-auto relative z-10">
         <div className="text-center mb-12">
-          <Badge className="mb-4 bg-blue-600 text-white px-6 py-2 text-lg">
-            ❄️ Зимнее предложение
+          <Badge className="mb-4 bg-gradient-to-r from-red-600 to-green-600 text-white px-6 py-2 text-lg animate-pulse">
+            🎄 Новогоднее предложение
           </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-slate-700">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-red-700 via-green-700 to-red-700 bg-clip-text text-transparent">
             Новогодние каникулы в глемпинге
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto">
             Встречай зиму в уютной атмосфере среди заснеженного леса
           </p>
         </div>
@@ -70,18 +72,23 @@ export default function NewYearPromoSection() {
             >
               <div className={`relative bg-gradient-to-r ${slide.bgColor} rounded-3xl overflow-hidden min-h-[500px] flex items-center justify-center`}>
                 <div className="absolute inset-0 pointer-events-none">
-                  {[...Array(30)].map((_, i) => (
+                  {[...Array(40)].map((_, i) => (
                     <div
                       key={i}
-                      className="absolute w-2 h-2 bg-white rounded-full opacity-60 animate-pulse"
+                      className="absolute rounded-full opacity-70 animate-pulse"
                       style={{
+                        width: `${Math.random() * 8 + 4}px`,
+                        height: `${Math.random() * 8 + 4}px`,
                         top: `${Math.random() * 100}%`,
                         left: `${Math.random() * 100}%`,
+                        backgroundColor: i % 3 === 0 ? '#fbbf24' : i % 3 === 1 ? '#ef4444' : '#ffffff',
                         animationDelay: `${Math.random() * 3}s`,
-                        animationDuration: `${2 + Math.random() * 2}s`
+                        animationDuration: `${1.5 + Math.random() * 2}s`
                       }}
                     />
                   ))}
+                  <div className="absolute top-10 right-10 text-8xl opacity-20">🎄</div>
+                  <div className="absolute bottom-10 left-10 text-8xl opacity-20">🎁</div>
                 </div>
 
                 <div className="relative z-10 text-center px-8 py-16">
@@ -101,7 +108,7 @@ export default function NewYearPromoSection() {
                   
                   <Button 
                     size="lg" 
-                    className="bg-blue-500 hover:bg-blue-600 text-white text-lg px-10 py-6 rounded-full font-semibold shadow-2xl hover:scale-105 transition-transform"
+                    className="bg-gradient-to-r from-yellow-500 via-red-500 to-yellow-500 hover:from-yellow-600 hover:via-red-600 hover:to-yellow-600 text-white text-lg px-10 py-6 rounded-full font-semibold shadow-2xl hover:scale-105 transition-transform"
                   >
                     {slide.buttonText}
                   </Button>
