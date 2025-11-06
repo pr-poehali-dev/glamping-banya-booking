@@ -35,16 +35,19 @@ export default function ChristmasPromoSection() {
   };
 
   return (
-    <section className="relative bg-gradient-to-b from-green-900 via-red-900 to-green-900 overflow-hidden">
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-green-800/30 to-transparent"></div>
-        <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-green-800/30 to-transparent"></div>
-      </div>
-
+    <section className="relative bg-[#1a0a0a] overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0d2818] via-[#3d0f0f] to-[#0d2818]"></div>
+      
       <div className="absolute top-0 left-0 w-full pointer-events-none">
-        <svg className="w-full h-24" viewBox="0 0 1200 100" preserveAspectRatio="none">
-          <path d="M0,0 Q150,50 300,25 T600,25 T900,25 T1200,25 L1200,0 Z" fill="rgba(34, 197, 94, 0.2)" />
-          <path d="M0,10 Q200,40 400,20 T800,20 T1200,20 L1200,0 Z" fill="rgba(34, 197, 94, 0.15)" />
+        <svg className="w-full h-32" viewBox="0 0 1200 100" preserveAspectRatio="none">
+          <path d="M0,0 Q150,60 300,30 T600,30 T900,30 T1200,30 L1200,0 Z" fill="#1a4d2e" opacity="0.4" />
+          <path d="M0,15 Q200,50 400,25 T800,25 T1200,25 L1200,0 Z" fill="#1a4d2e" opacity="0.3" />
+        </svg>
+      </div>
+      
+      <div className="absolute bottom-0 left-0 w-full pointer-events-none">
+        <svg className="w-full h-32" viewBox="0 0 1200 100" preserveAspectRatio="none">
+          <path d="M0,100 Q150,40 300,70 T600,70 T900,70 T1200,70 L1200,100 Z" fill="#1a4d2e" opacity="0.3" />
         </svg>
       </div>
 
@@ -59,23 +62,23 @@ export default function ChristmasPromoSection() {
             >
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div className="text-center lg:text-left order-2 lg:order-1">
-                  <div className="inline-block mb-6 px-6 py-2 bg-amber-500/90 rounded-full">
-                    <span className="text-sm font-bold text-white tracking-wide">
+                  <div className="inline-block mb-6 px-6 py-2 bg-[#8b2e2e] rounded-full border border-[#a03939]">
+                    <span className="text-sm font-bold text-[#ffd7a3] tracking-wide">
                       🎄 НОВОГОДНЕЕ ПРЕДЛОЖЕНИЕ
                     </span>
                   </div>
 
-                  <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+                  <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-[#ffd7a3] mb-6 leading-tight">
                     {slide.title}
                   </h2>
                   
-                  <p className="text-xl md:text-2xl text-amber-100 mb-10 leading-relaxed">
+                  <p className="text-xl md:text-2xl text-[#d4af8c] mb-10 leading-relaxed">
                     {slide.subtitle}
                   </p>
                   
                   <Button 
                     size="lg" 
-                    className="bg-amber-500 hover:bg-amber-600 text-white text-lg px-10 py-7 rounded-full font-bold shadow-2xl transition-all"
+                    className="bg-[#8b2e2e] hover:bg-[#a03939] text-[#ffd7a3] text-lg px-10 py-7 rounded-full font-bold shadow-2xl transition-all border border-[#a03939]"
                   >
                     {slide.buttonText}
                   </Button>
@@ -83,7 +86,7 @@ export default function ChristmasPromoSection() {
 
                 <div className="order-1 lg:order-2">
                   <div className="relative">
-                    <div className="absolute -inset-4 bg-gradient-to-r from-green-500 to-red-500 rounded-3xl blur-2xl opacity-30"></div>
+                    <div className="absolute -inset-4 bg-gradient-to-r from-[#1a4d2e] to-[#8b2e2e] rounded-3xl blur-2xl opacity-50"></div>
                     <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                       <img 
                         src={slide.image} 
@@ -100,7 +103,7 @@ export default function ChristmasPromoSection() {
           <div className="absolute bottom-0 left-1/2 lg:left-1/4 -translate-x-1/2 flex gap-4 items-center">
             <button
               onClick={prevSlide}
-              className="w-14 h-14 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-sm flex items-center justify-center text-white text-2xl transition-all border-2 border-white/30"
+              className="w-14 h-14 rounded-full bg-[#8b2e2e]/80 hover:bg-[#a03939] backdrop-blur-sm flex items-center justify-center text-[#ffd7a3] text-2xl transition-all border border-[#a03939]"
               aria-label="Previous"
             >
               ‹
@@ -113,8 +116,8 @@ export default function ChristmasPromoSection() {
                   onClick={() => setCurrentSlide(index)}
                   className={`transition-all rounded-full ${
                     index === currentSlide
-                      ? 'bg-amber-400 w-12 h-3'
-                      : 'bg-white/40 hover:bg-white/60 w-3 h-3'
+                      ? 'bg-[#ffd7a3] w-12 h-3'
+                      : 'bg-[#8b2e2e]/60 hover:bg-[#8b2e2e] w-3 h-3'
                   }`}
                   aria-label={`Slide ${index + 1}`}
                 />
@@ -123,7 +126,7 @@ export default function ChristmasPromoSection() {
 
             <button
               onClick={nextSlide}
-              className="w-14 h-14 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-sm flex items-center justify-center text-white text-2xl transition-all border-2 border-white/30"
+              className="w-14 h-14 rounded-full bg-[#8b2e2e]/80 hover:bg-[#a03939] backdrop-blur-sm flex items-center justify-center text-[#ffd7a3] text-2xl transition-all border border-[#a03939]"
               aria-label="Next"
             >
               ›
@@ -133,10 +136,12 @@ export default function ChristmasPromoSection() {
       </div>
 
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-10 left-10 text-5xl opacity-20 animate-pulse">🎄</div>
-        <div className="absolute top-20 right-20 text-4xl opacity-20 animate-pulse" style={{animationDelay: '1s'}}>⭐</div>
-        <div className="absolute bottom-32 left-20 text-5xl opacity-20 animate-pulse" style={{animationDelay: '2s'}}>🎁</div>
-        <div className="absolute bottom-20 right-32 text-4xl opacity-20 animate-pulse" style={{animationDelay: '0.5s'}}>❄️</div>
+        <div className="absolute top-10 left-10 text-6xl opacity-15 animate-pulse">🎄</div>
+        <div className="absolute top-20 right-20 text-5xl opacity-15 animate-pulse" style={{animationDelay: '1s'}}>⭐</div>
+        <div className="absolute bottom-32 left-20 text-6xl opacity-15 animate-pulse" style={{animationDelay: '2s'}}>🎁</div>
+        <div className="absolute bottom-20 right-32 text-5xl opacity-15 animate-pulse" style={{animationDelay: '0.5s'}}>❄️</div>
+        <div className="absolute top-1/3 right-10 text-4xl opacity-10">🔔</div>
+        <div className="absolute bottom-1/3 left-10 text-5xl opacity-10">✨</div>
       </div>
     </section>
   );
