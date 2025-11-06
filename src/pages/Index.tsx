@@ -15,6 +15,7 @@ import BookingSection from '@/components/sections/BookingSection';
 import ServicesSection from '@/components/sections/ServicesSection';
 import GallerySection from '@/components/sections/GallerySection';
 import ContactSection from '@/components/sections/ContactSection';
+import MenuDownloadSection from '@/components/sections/MenuDownloadSection';
 
 export default function Index() {
   return (
@@ -36,6 +37,7 @@ export default function Index() {
       <ServicesSection />
       <GallerySection />
       <ContactSection />
+      <MenuDownloadSection />
     </div>
   );
 }
