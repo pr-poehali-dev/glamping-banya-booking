@@ -16,17 +16,17 @@ export default function MenuDownloadSection() {
   };
 
   return (
-    <section className="py-20 px-6 bg-background">
+    <section className="py-20 px-6 bg-primary">
       <div className="container mx-auto max-w-6xl">
         {/* Hero блок с кнопкой */}
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold mb-4">Наше меню</h2>
-          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <h2 className="text-5xl font-bold mb-6 text-primary-foreground">Наше меню</h2>
+          <p className="text-xl text-primary-foreground/80 mb-10 max-w-2xl mx-auto">
             Откройте для себя уникальные блюда в брутальной атмосфере Chuck Wood
           </p>
           <Button 
             size="lg" 
-            className="text-lg px-8 py-6 h-auto"
+            className="text-lg px-10 py-7 h-auto bg-accent hover:bg-accent/90 text-accent-foreground font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
             onClick={handleDownload}
           >
             <Icon name="Download" size={24} className="mr-3" />
@@ -36,7 +36,7 @@ export default function MenuDownloadSection() {
 
         {/* Highlight блюда с фото */}
         <div>
-          <h3 className="text-3xl font-bold text-center mb-8">Хиты нашего меню</h3>
+          <h3 className="text-3xl font-bold text-center mb-8 text-primary-foreground">Хиты нашего меню</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="group cursor-pointer">
               <div className="relative overflow-hidden rounded-lg mb-4 aspect-square">
@@ -46,8 +46,8 @@ export default function MenuDownloadSection() {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                 />
               </div>
-              <h4 className="text-xl font-bold mb-2">Фирменный бургер</h4>
-              <p className="text-muted-foreground">Сочная говядина с авторским соусом</p>
+              <h4 className="text-xl font-bold mb-2 text-primary-foreground">Фирменный бургер</h4>
+              <p className="text-primary-foreground/70">Сочная говядина с авторским соусом</p>
             </div>
 
             <div className="group cursor-pointer">
@@ -58,8 +58,8 @@ export default function MenuDownloadSection() {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                 />
               </div>
-              <h4 className="text-xl font-bold mb-2">Рибай стейк</h4>
-              <p className="text-muted-foreground">Мраморная говядина на гриле</p>
+              <h4 className="text-xl font-bold mb-2 text-primary-foreground">Рибай стейк</h4>
+              <p className="text-primary-foreground/70">Мраморная говядина на гриле</p>
             </div>
 
             <div className="group cursor-pointer">
@@ -70,8 +70,8 @@ export default function MenuDownloadSection() {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                 />
               </div>
-              <h4 className="text-xl font-bold mb-2">Шоколадный фондан</h4>
-              <p className="text-muted-foreground">С жидкой серединкой и мороженым</p>
+              <h4 className="text-xl font-bold mb-2 text-primary-foreground">Шоколадный фондан</h4>
+              <p className="text-primary-foreground/70">С жидкой серединкой и мороженым</p>
             </div>
           </div>
         </div>
