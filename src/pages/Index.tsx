@@ -1,6 +1,7 @@
 import Header from '@/components/sections/Header';
 import HeroSection from '@/components/sections/HeroSection';
 import NewYearPromoSection from '@/components/sections/NewYearPromoSection';
+import WinterPromoSection from '@/components/sections/WinterPromoSection';
 import HalloweenPromoSection from '@/components/sections/HalloweenPromoSection';
 import HalloweenSection from '@/components/sections/HalloweenSection';
 import RegularEventsSection from '@/components/sections/RegularEventsSection';
@@ -19,6 +20,7 @@ export default function Index() {
       <Header />
       <HeroSection />
       <NewYearPromoSection />
+      <WinterPromoSection />
       <HalloweenPromoSection />
       <HalloweenSection />
       <RegularEventsSection />
